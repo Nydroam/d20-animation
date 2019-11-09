@@ -1,0 +1,26 @@
+body {
+    width: 100%;
+    margin:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+#dice{
+    width:250px;
+    height:200px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: all 3s ease-out;
+}
+.side{
+    position: absolute;
+    width:0;
+    height:0;
+    transform-origin: 50% 66%;
+    z-index:1;
+    background-image: url("triangle.png");
+    background-size: 100% 100% ;
+}
