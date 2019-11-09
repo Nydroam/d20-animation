@@ -10,16 +10,17 @@ for (side of sides){
     side.style.height = height;
 }
 
-var logo = document.getElementById("logo");
-logo.style.marginTop = width*1.2;
-logo.style.fontSize = height/3;
-logo.style.fontWeight = "bold";
-logo.style.color = "white";
-logo.style.width = width/3*2 + "px";
-logo.style.height = height + "px";
-logo.style.backgroundSize = "100% auto";
-logo.style.backgroundRepeat = "no-repeat";
-logo.style.transform = "translateZ(" + (radius +6) + "px)"
+var dice = document.getElementById("dice");
+dice.style.width = width*3;
+dice.style.height = width*3;
+dice.style.paddingBottom = width/2;
+
+var text = document.getElementById("text");
+text.style.marginTop = width*1.2;
+text.style.fontSize = height/3;
+text.style.width = width/3*2 + "px";
+text.style.height = height + "px";
+text.style.transform = "translateZ(" + (radius +6) + "px)"
 var transformList = [
 "rotateY(  36deg ) rotateX( 53deg ) rotateZ(   0deg ) translateZ(  " + radius + "px )",
 "  rotateY( 108deg ) rotateX( 53deg ) rotateZ( 240deg ) translateZ(  " + radius + "px )",
@@ -52,13 +53,13 @@ for(i= 0; i < transformList.length; i++){
 }
 
 const roll = () => {
-let body = document.getElementById("dice")
 randY = Math.floor(Math.random()*2)+1;
 randZ = Math.floor(Math.random()*2)+1;
 randNum = Math.floor(Math.random()*20)+1;
-body.style.transform = "rotateY(" +randY*360+"deg) rotateZ(" + (randZ*360) + "deg)";
-logo.style.opacity = "100%";
-logo.innerHTML = randNum;
+dice.style.transform = "translateX(800px) rotateY(" +randY*360+"deg) rotateZ(" + (randZ*360) + "deg)";
+text.style.opacity = "100%";
+text.innerHTML = randNum;
+document.getElementById("slide").style.maxWidth="800px";
 }
 
 window.onload = roll;

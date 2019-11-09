@@ -4,14 +4,9 @@ body {
     max-height:100%;
     margin:0;
     display: flex;
-    align-items: center;
     justify-content: center;
-    transition: transform 0.5s ease-out 2s;
   }
 #dice{
-    width:250px;
-    height:200px;
-    padding-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,13 +22,31 @@ body {
     background-image: url("triangle.png");
     background-size: 100% 100% ;
 }
-#logo{  
-    /* background-image: url("tabletoplogo_mono.png"); */
+#text{  
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     z-index:1;
     opacity: 0%;
     transition: opacity 0.5s linear 2s;
+    font-weight:bold;
+    color:white;
+    background-size: 100% auto;
+}
+#slide{
+    margin-top: 30px;
+    position: absolute;
+    height:150px;
+    overflow:hidden;
+    max-width:0;
+    transition: max-width 1.9s ease-out;
+}
+#tabletop{
+    height:150px;
+    
+    width:800px;
+}
+#anim-container{
+    width:1000px;
 }
