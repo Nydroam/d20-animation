@@ -45,7 +45,7 @@ body {
     height:150px;
     overflow:hidden;
     max-width:0;
-    transition: max-width 1.9s ease-out;
+    transition: max-width 2s ease-out;
 }
 #tabletop{
     height:150px;

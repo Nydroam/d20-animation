@@ -51,15 +51,24 @@ let i = 0
 for(i= 0; i < transformList.length; i++){
     sides[i].style.transform = transformList[i]
 }
-
 const roll = () => {
 randY = Math.floor(Math.random()*2)+1;
 randZ = Math.floor(Math.random()*2)+1;
 randNum = Math.floor(Math.random()*20)+1;
 dice.style.transform = "translateX(800px) rotateY(" +randY*360+"deg) rotateZ(" + (randZ*360) + "deg)";
+text.style.transform = "opacity 0.5s linear 2s"
 text.style.opacity = "100%";
 text.innerHTML = randNum;
 document.getElementById("slide").style.maxWidth="800px";
+setTimeout(unroll,5000)
+}
+
+const unroll = () =>{
+    dice.style.transform = "none"
+    text.innerHTML = "";
+    text.style.opacity = "0";
+    document.getElementById("slide").style.maxWidth="0px";
+    setTimeout(roll,4000)
 }
 
 window.onload = roll;
